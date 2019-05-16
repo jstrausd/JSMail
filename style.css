@@ -1,0 +1,169 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+    color: #2f2f2f;
+}
+
+h1{
+    text-align: center;
+    font-size: 3em;
+}
+
+.emails{
+    width: 70%;
+    height: 330px;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 50px;
+    background: #f6f6f6;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 8px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 8px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 8px;
+}
+
+.emails select{
+    height: 30px;
+    text-align: center;
+    outline: none;
+    font-size: 13px;
+    margin-top: 15px;
+}
+
+#info{
+    display: none;
+    margin: 0 auto;
+    text-align: left;
+    width: 50%;
+    padding: 0 100px;
+}
+
+#info h3{
+    font-weight: 300;
+}
+
+#info input[type="button"]{
+    width: 90%;
+    border: 1px solid;
+    border-radius: 50px;
+    font-size: 1.05em;
+    background: #42b983;
+    color: #fff;
+    border-color:#42b983;
+    cursor: pointer;
+    letter-spacing: 0.1em;
+    margin: 0 auto;
+    display: block;
+    padding: 0.75em 2em;
+    transition: background .3s, color .3s, box-shadow .2s;
+    outline: none;
+}
+
+#info input[type="button"]:hover{
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 8px 16px;
+}
+
+.inputs{
+    display: none;
+    width: 70%;
+    height: 630px;
+    margin: 50px auto;
+    text-align: center;
+    background: #f6f6f6;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 8px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 8px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 8px;
+}
+
+.inputs input{
+    width: 50%;
+    border: 1px solid;
+    border-radius: 50px;
+    font-size: 0.8em;
+    background: #fff;
+    border-color: #42b983;
+    color: #2F4858;
+    letter-spacing: 0.1em;
+    margin: 10px auto;
+    display: block;
+    padding: 0.75em 2em;
+    transition: background .3s, color .3s;
+    outline: none;
+}
+
+.inputs input[type="button"]{
+    width: 45%;
+    border: 1px solid;
+    border-radius: 50px;
+    font-size: 1.05em;
+    border-color:#42b983;
+    background: #42b983;
+    color: #fff;
+    cursor: pointer;
+    letter-spacing: 0.1em;
+    margin: 0 auto;
+    display: block;
+    padding: 0.75em 2em;
+    transition: background .3s, color .3s;
+    outline: none;
+    margin-top: 30px;
+}
+
+.inputs input[type="button"]:hover{
+    transition: background .3s, color .3s, box-shadow .2s;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 8px 16px;
+}
+
+/*
+    TOOLTIP
+*/
+
+[data-tip] {
+    position:relative;
+
+}
+[data-tip]:before {
+	content:'';
+	/* hides the tooltip when not hovered */
+	display:none;
+	content:'';
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-bottom: 5px solid #1a1a1a;	
+	position:absolute;
+	top:30px;
+	left:50%;
+	z-index:8;
+	font-size:0;
+	line-height:0;
+	width:0;
+	height:0;
+}
+[data-tip]:after {
+	display:none;
+	content:attr(data-tip);
+	position:absolute;
+	top:35px;
+	left:30%;
+	padding:5px 8px;
+	background:#1a1a1a;
+	color:#fff;
+	z-index:9;
+	font-size: 0.75em;
+	height:18px;
+	line-height:18px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 5px;
+	white-space:nowrap;
+	word-wrap:normal;
+}
+[data-tip]:hover:before,
+[data-tip]:hover:after {
+	display:block;
+}

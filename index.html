@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>E-Mail Manager</title>
+        <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600"
+            rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+        <div class="spammer">
+            <h1>E-Mail Spammer</h1>
+            <div class="emails">
+                <select v-on:change="update" id="select_email">
+                    <option selected>Select one</option>
+                    <optgroup label="GMX">
+                        <option value="no">abcdefghijklmnopqrstuvwxyz2@gmx.at</option>
+                        <option value="no">hugo.strassberger@gmx.at</option>
+                        <option value="no">simon.murmelsberger@gmx.at</option>
+                        <option value="no">androidistscheise@gmx.at</option>
+                        <option value="no">noah.hinterpickler@gmx.at</option>
+                    </optgroup>
+                    <optgroup label="GMAIL">
+                        <option value="no">rartin.miedler@gmail.com</option>
+                        <option value="no">-</option>
+                        <option value="no">-</option>
+                        <option value="no">-</option>
+                    </optgroup>
+                </select>
+                <select v-on:change="updateTemplate" id="select_template">
+                    <option selected>Select one</option>
+                    <option value="carina_hoffmann">Carina Hoffmann</option>
+                    <option value="lv">Droptop GmbH</option>
+                    <option value="snapchat">Snapchat</option>
+                    <option value="no">-</option>
+                    <option value="no">-</option>
+                </select>
+
+                <div id="info">
+                    <h3><b>E-Mail:</b> {{email_name}}</h3>
+                    <h3><b>Template</b> {{template}}</h3>
+                    <h3><b>Hoster:</b> {{hoster}}</h3>
+                    <h3><b>SMTP Port:</b> {{port}}</h3>
+                    <h3><b>SMTP Host:</b> {{host}}</h3>
+                    <input type="button" v-on:click="load" value="LOAD" />
+                </div>
+            </div>
+            <div class="inputs">
+                <input type="email" id="recipient" placeholder="Empfänger" />
+                <input type="text" id="recipient_name" />
+                <br>
+                <input type="email" id="sender_mail"/>
+                <input type="text" id="sender_name"/>
+                <input type="password" id="sender_password"/>
+                <input type="text" id="sender_smtp"/>
+                <input type="number" id="sender_smtp_port"/>
+                <br>
+                <input type="text" id="message" placeholder="Message" />
+                <input type="text" id="subject" placeholder="Subject" />
+                <br>
+                <div data-tip="Anzahl der Mails [max. 20] (Desto mehr Mails
+                    desto größer die Wartezeit)">
+                    <input type="number" id="amount" value="1" max="20" />
+                </div>
+                <input v-on:click="senden" type="button" value="Senden" />
+            </div>
+        </div>
+        <script
+            src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <script src="jsmail.js"></script>
+        <script src="index.js"></script>
+    </body>
+</html>
